@@ -30,6 +30,8 @@
   <properties>
     <kogito.management-console.image>docker.io/apache/incubator-kie-kogito-management-console:10.0.0</kogito.management-console.image>
     <kogito.task-console.image>docker.io/apache/incubator-kie-kogito-task-console:10.0.0</kogito.task-console.image>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <!-- Third-party Libraries -->
     <lombok.version>1.18.30</lombok.version>
   </properties>
@@ -184,6 +186,18 @@
       <version>${lombok.version}</version>
       <scope>provided</scope>
     </dependency>
+
+    <!-- =============================== -->
+    <!-- MISSING DEPENDENCIES ADDED -->
+    <!-- =============================== -->
+
+    <!-- Bcrypt (at.favre.lib.crypto.bcrypt) -->
+    <dependency>
+      <groupId>at.favre.lib</groupId>
+      <artifactId>bcrypt</artifactId>
+      <version>0.10.2</version>
+    </dependency>
+
   </dependencies>
 
   <profiles>
@@ -256,6 +270,14 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>14</source>
+          <target>14</target>
+        </configuration>
       </plugin>
     </plugins>
   </build>
