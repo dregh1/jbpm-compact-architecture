@@ -1,4 +1,4 @@
-package mg.orange.workflow.model.bpmn;
+package mg.orange.workflow.model.process;
 
 /**
  * DTO représentant un nœud (élément) d'un processus BPMN

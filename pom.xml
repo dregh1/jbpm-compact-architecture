@@ -34,6 +34,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <!-- Third-party Libraries -->
     <lombok.version>1.18.30</lombok.version>
+    <camunda-bpmn.version>7.18.0</camunda-bpmn.version>
   </properties>
 
   <dependencyManagement>
@@ -100,6 +101,10 @@
       <artifactId>quarkus-resteasy-multipart</artifactId>
     </dependency>
     <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-jsr310</artifactId>
+    </dependency>
+    <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-smallrye-openapi</artifactId>
     </dependency>
@@ -130,6 +135,13 @@
       <artifactId>kie-addons-quarkus-source-files</artifactId>
     </dependency>
 
+    <!-- ======================================== -->
+    <!-- DATABASE & PERSISTENCE -->
+    <!-- ======================================== -->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-hibernate-orm-panache</artifactId>
+    </dependency>
     <!-- Persistence -->
     <dependency>
       <groupId>io.quarkus</groupId>
@@ -187,17 +199,32 @@
       <scope>provided</scope>
     </dependency>
 
+    <!-- Parser XML BPMN (Camunda BPMN Model API) -->
+    <dependency>
+      <groupId>org.camunda.bpm.model</groupId>
+      <artifactId>camunda-bpmn-model</artifactId>
+      <version>${camunda-bpmn.version}</version>
+    </dependency>
     <!-- =============================== -->
     <!-- MISSING DEPENDENCIES ADDED -->
     <!-- =============================== -->
 
+    <!-- Quarkus Scheduler (for @Scheduled) -->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-scheduler</artifactId>
+    </dependency>
     <!-- Bcrypt (at.favre.lib.crypto.bcrypt) -->
     <dependency>
       <groupId>at.favre.lib</groupId>
       <artifactId>bcrypt</artifactId>
       <version>0.10.2</version>
     </dependency>
-
+    <!-- Quarkus JWT Auth (for JWT, SmallRye, MicroProfile JWT) -->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-smallrye-jwt</artifactId>
+    </dependency>
   </dependencies>
 
   <profiles>
@@ -275,8 +302,8 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>14</source>
-          <target>14</target>
+          <source>16</source>
+          <target>16</target>
         </configuration>
       </plugin>
     </plugins>

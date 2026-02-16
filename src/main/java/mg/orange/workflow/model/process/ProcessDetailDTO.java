@@ -1,7 +1,4 @@
-package mg.orange.workflow.model.bpmn;
-
-import mg.orange.workflow.model.process.DiagramInfoDTO;
-import mg.orange.workflow.model.process.ProcessType;
+package mg.orange.workflow.model.process;
 
 import java.util.List;
 import java.util.Map;

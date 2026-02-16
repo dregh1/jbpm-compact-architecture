@@ -1,8 +1,8 @@
 package mg.orange.workflow.service.process;
 
-import mg.orange.workflow.model.bpmn.ProcessDetailDTO;
-import mg.orange.workflow.model.bpmn.ProcessNodeDTO;
-import mg.orange.workflow.model.bpmn.ProcessTaskDTO;
+import mg.orange.workflow.model.process.ProcessDetailDTO;
+import mg.orange.workflow.model.process.ProcessNodeDTO;
+import mg.orange.workflow.model.process.ProcessTaskDTO;
 import mg.orange.workflow.model.groupe.GroupeResponseDTO;
 import mg.orange.workflow.model.process.DiagramInfoDTO;
 import mg.orange.workflow.model.process.ProcessDTO;

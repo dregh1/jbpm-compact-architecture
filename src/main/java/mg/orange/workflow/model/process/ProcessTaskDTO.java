@@ -1,4 +1,4 @@
-package mg.orange.workflow.model.bpmn;
+package mg.orange.workflow.model.process;
 
 import java.util.List;
 
