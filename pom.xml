@@ -30,6 +30,8 @@
   <properties>
     <kogito.management-console.image>docker.io/apache/incubator-kie-kogito-management-console:10.0.0</kogito.management-console.image>
     <kogito.task-console.image>docker.io/apache/incubator-kie-kogito-task-console:10.0.0</kogito.task-console.image>
+    <!-- Third-party Libraries -->
+    <lombok.version>1.18.30</lombok.version>
   </properties>
 
   <dependencyManagement>
@@ -80,13 +82,20 @@
   </dependencyManagement>
 
   <dependencies>
+    <!-- REST API -->
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-resteasy</artifactId>
     </dependency>
+    <!-- JSON -->
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-resteasy-jackson</artifactId>
+    </dependency>
+    <!-- Multipart -->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-resteasy-multipart</artifactId>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
@@ -163,6 +172,17 @@
     <dependency>
       <groupId>org.kie</groupId>
       <artifactId>kogito-addons-quarkus-data-audit</artifactId>
+    </dependency>
+    <!-- ======================================== -->
+    <!-- UTILITIES & LIBRARIES -->
+    <!-- ======================================== -->
+
+    <!-- Lombok pour les annotations (compile-time only) -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 
